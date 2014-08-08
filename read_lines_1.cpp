@@ -8,35 +8,27 @@ using namespace std;
 vector<string> my_split (string s) {
   
   vector<string> v ;
-  
-  cout << "the size is " << s.size() << endl;
-
   string::size_type i = 0;
   
-  while (i != s.size()) {
+  while (i < s.size()) {
 
     if (!isspace(s[i])) {
 
       string::size_type j = i;
 
       while (j != s.size() && !(isspace(s[j]))) {
-	
 	++j;
-
       }
 
+      // we found a word with at least 1 letter 
       if (j > i) {
-	
-	// we found a word with at least 1 letter 
 	v.push_back(s.substr(i,j-i));
-
       }
 
       // jump to the j_th position
       i = j;
 
     }
-	
     ++i;
   }
   
@@ -47,6 +39,8 @@ vector<string> my_split (string s) {
 int main () {
 
   string s;
+
+  cout << "Please enter your line" << endl;
 
   while (getline(cin, s)) {
 
