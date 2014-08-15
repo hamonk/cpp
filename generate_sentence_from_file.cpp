@@ -21,11 +21,12 @@ int nrand (int n) {
   const int bucket_size = RAND_MAX / n;
   int r;
   
+  srand(time(NULL));
   int m = rand();
   do r = m / bucket_size;
   while (r >= n);
 
-  cout << "m:" << m << "|r:" << r << endl;
+  //cout << "m:" << m << "|r:" << r << endl;
   return r;
 }
 
