@@ -54,6 +54,7 @@ Grammar read_grammar ()
   while(getline(f, line)) {
 
     split(line, ostream_iterator<string>(cout, "\n"));
+    // split(line, back_inserter(word_list)); //would work as well!
     
     // we did a split of the line, the first element is the map entry
     // the second element is a vector of strings
